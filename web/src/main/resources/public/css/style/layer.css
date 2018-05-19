@@ -10,3 +10,7 @@
 .layer-content {
     padding: 50px;
 }
+
+.pagination>li>a, .pagination>li>span{
+    margin-left: 15px;
+}

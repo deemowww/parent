@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,9 +28,9 @@ public class FieldController {
     @RequestMapping("/findbypage")
     public Page<Field> getFieldsPage(@RequestParam("pageNum") String pageNum){
         int pageSize = 10;
-        System.out.println(pageNum);
         int page = Integer.parseInt(pageNum);
-        Pageable pageable = new PageRequest(page, pageSize);
+        Sort sort = new Sort(Sort.Direction.DESC, "createTime");
+        Pageable pageable = new PageRequest(page, pageSize, sort);
 
         return fieldRepository.findAll(pageable);
     }

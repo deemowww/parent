@@ -11,10 +11,39 @@
         </div>
         <div class="row">
             <div class="layer-content" id="records" ng-show="is_record">
-                <div class="list-group">
-                    <a ui-sref="field_detail" href="#" class="list-group-item">记录1<span style="float: right; position: relative;">2018-01-01</span></a>
-                    <a ui-sref="field_detail" href="#" class="list-group-item">记录2<span style="float: right; position: relative;">2018-01-01</span></a>
-                </div>
+                <form>
+                    <div class="form-group" ng-repeat="content in contents">
+                        <label class="form-control">
+                            <input type="checkbox"/>
+                            <a ui-sref="field_detail" href="#" ng-cloak>{{content.location + ':' + content.seedName}}
+                                <span style="float: right; position: relative;" ng-bind="content.createTime"></span>
+                            </a>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>选择流通公司</label>
+                        <select class="form-control" title="" name="company">
+                            <option>公司1</option>
+                            <option>公司1</option>
+                            <option>公司1</option>
+                            <option>公司1</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default btn-md">提交流通</button>
+                    </div>
+                    <div class="form-group text-center">
+                        <ul class="pagination">
+                            <li ng-class="{disabled:pg3 == 1}"><a href="#" ng-click="turnToPage(pg3 - 1)">上一页</a></li>
+                            <li><a href="#" ng-bind="pg1" ng-show="pg1 != 0" ng-click="turnToPage(pg1)"></a></li>
+                            <li><a href="#" ng-bind="pg2" ng-show="pg2 != 0" ng-click="turnToPage(pg2)"></a></li>
+                            <li class="active"><a href="#" ng-bind="pg3" ng-show="pg3 != 0" ng-click="turnToPage(pg3)"></a></li>
+                            <li><a href="#" ng-bind="pg4" ng-show="pg4 != 0" ng-click="turnToPage(pg4)"></a></li>
+                            <li><a href="#" ng-bind="pg5" ng-show="pg5 != 0" ng-click="turnToPage(pg5)"></a></li>
+                            <li ng-class="{disabled:pg3 == totalPages}"><a href="#" ng-click="turnToPage(pg3 + 1)" ng-disabled="pg3 == totalPages">下一页</a></li>
+                        </ul>
+                    </div>
+                </form>
             </div>
             <div class="layer-content" id="new-record" ng-show="!is_record">
                 <form>
