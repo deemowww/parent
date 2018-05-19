@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index_process</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../js/paging.js"></script>
+</head>
+
+<body>
+	<div id="header">
+		<div class="wrap1000 clearfix" style="background: #7CAEB5 center bottom;height: 108px;">
+		     <div class="tool_box float_right">
+				 <div class="tool float_right relative">
+					 <em>[</em>
+					 <a href="#" rel="nofollow">登录</a>
+					 <em>|</em> 
+					 <a href="#" rel="nofollow">注册</a>
+					 <em>]</em>
+				 </div>
+			 </div>
+			 
+		
+	    </div>
+		
+	</div>
+	<div id="nav">
+		<div class="main_nav">
+			<div class="wrap1000">
+				<ul>
+					<li class="  active">
+						<a href="index3.html">记录管理</a>
+						<i class="ui_icon_bg"></i>
+					</li>
+					<li class=" "><a href="#">新建记录</a></li>
+					
+					
+					<li class="float_right "><a href="#">流通查询</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="sub_nav">
+			<div class="sub_nav_box dblock">
+			  <!--废弃-->
+			</div>
+			
+		</div>
+	</div>
+	<div id="container">
+		<div class="wrap1000">
+			<table class="main_table">
+				<tbody>
+				<tr valign="top">
+				<!--left begin-->
+					<td class="mtd_left"  >
+						<div id="sidebar">
+							<ul id="according">
+								<li class="according">
+									<img src="../img/pixer1.gif">
+									<a href="index3.html">种植</a>
+								</li>
+								<li class="according">
+									<img src="../img/pixer1.gif">
+									<a href="index_entrepot.html">仓储</a>
+								</li>
+								<li class="according">
+									<img src="../img/pixer1.gif">
+									<a href="index_process.html">加工</a>
+								</li>
+								<li class="according">
+									<img src="../img/pixer1.gif">
+									<a href="index_franchiser.html">销售</a>
+								</li>
+																					
+							</ul>
+							
+							
+							
+						</div>
+					</td>
+					<td class="mtd_right">
+						<table  style="border-collapse: collapse" bordercolor="#c0daf5" cellspacing="0" cellpadding="3" width="100%" border="1">
+							<tbody>
+								<tr>
+									<td align="left" width="100%" bgcolor="#e9f2fb" height="25" style="font-size: 22px">
+										加工记录列表
+									</td>
+								</tr>
+								<tr>
+									<td align="left" style="background-image: url(../img/bg2.gif)">
+										<div id="word" >
+											<table style="width: 600px">
+												<tbody>
+													<tr style="height: 20px">
+														<td>
+                                                          <a title="031564612632记录" href="#" target="_self">031564612632记录</a>
+                                                        </td>
+														<td align="left" style="color:#f98510">(2017-12-20)  </td>
+													</tr>
+													<tr style="height: 20px">
+														<td>
+                                                          <a title="564612ds512311记录" href="#" target="_self">564612ds512311记录</a>
+                                                        </td>
+														<td align="left" style="color:#f98510">(2017-12-20)  </td>
+													</tr>  																										
+												</tbody>
+											</table>
+										</div>
+								        <!--替换原来的分页栏-->
+										<div id="page" class="page_div"></div>
+									</td>
+								</tr>
+								
+							</tbody>
+														
+						</table>							
+					</td>
+				<!--right end-->	
+										
+				    </tr>
+				</tbody>				
+			</table>
+			
+		</div>
+		
+		
+	</div>
+	
+	
+	
+	
+	
+	
+</body>
+	<script>
+	
+		//分页
+		$("#page").paging({//这是预设的，在没有连接服务器的情况下展示。
+			pageNo:1,
+			totalPage: 9,
+			totalSize: 300,
+			callback: function(num) {
+				//alert(num)
+				
+			}
+		})
+	
+	
+	    
+		// 调用ajax
+		//参数为当前页
+		ajaxTest(1);
+		
+		function ajaxTest(num) {
+			$.ajax({
+				url: "/Htmls/transjson",
+				type: "post",
+				data: {},
+				//dataType: "json",
+				success: function(data) {
+				   			    
+				    var datajson = jQuery.parseJSON(data);			    
+					
+					//分页
+					$("#page").paging({
+					    
+						pageNo: num,
+						totalPage: datajson.totalPage,
+						totalSize: datajson.totalSize,
+						callback: function(num) {
+							ajaxTest(num)
+						}
+					})
+					
+				},
+				error: function( XMLHttpRequest, textStatus, errorThrown){
+				   //alert(XMLHttpRequest.status);
+                   //alert(XMLHttpRequest.readyState);
+                   //alert(textStatus);
+
+				}
+			});
+		}
+		
+	</script>
+</html>
