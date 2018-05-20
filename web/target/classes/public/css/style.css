@@ -1,0 +1,312 @@
+@charset "utf-8";
+
+
+
+#header {
+	height: 108px;
+}
+div {
+    display: block;
+}
+body, a, div, em, ul, ol, li, i, select,option {
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+.wrap1000 {
+	clear: both;	
+    margin:0 auto;
+	width: 1000px;
+}
+
+#header.tool_box {
+	height: 30px;
+	line-height: 30px;
+}
+
+.main_nav ul li.float_right {
+    float: right;
+}
+
+.tool_box.tool {
+	padding: 0 10px;
+}
+
+.relative {
+	position: relative;
+}
+
+.tool_box .tool em {
+	color: #2191ff;
+    padding: 0 4px;
+}
+
+em,i {
+	font-style: normal;
+    font-weight: normal;
+}
+
+.tool_box .tool a {
+    color: #333333;
+    cursor: pointer;
+}
+
+a {
+	color: #606060;
+    outline: medium none;
+    text-decoration: none;
+}
+
+.main_nav {
+	background-color: #2191ff;
+    height: 40px;
+}
+
+ol,ul,li {
+	list-style: none outside none;
+}
+
+.main_nav ul li {
+    float: left;
+    line-height: 40px;
+    position: relative;
+}
+
+
+
+.main_nav ul li.active a, .main_nav ul li a:hover {
+	background-color: #fe6b00;
+}
+
+.main_nav ul li a {
+	font-size: 16px;
+    color: #fff;
+    display: inline-block;
+    padding: 0 35px;
+}
+
+.float_right {
+	float: right;
+}
+
+.dblock {
+	display: block;
+}
+
+.sub_nav_box {
+	background-color: #f2f9ff;
+    height: 36px;
+    border-bottom: 1px solid #9fd9f6;
+    position: relative;
+}
+
+.sub_nav_box ul {
+    position: absolute;
+    top: 0;
+}
+
+.sub_nav_box ul li {
+    line-height: 36px;
+    float: left;
+    padding: 0 28px;
+}
+
+.sub_nav_box ul li a.current {
+    border-bottom: 1px solid #2191ff;
+    color: #2191ff;
+}
+
+
+	.sub_nav_box ul li a {
+    height: 36px;
+    line-height: 36px;
+    padding: 0 10px;
+    display: inline-block;
+    font-size: 14px;
+    color: #666666;
+
+     }
+
+.sub_nav_box ul li {
+    line-height: 36px;
+    float: left;
+    padding: 0 28px;
+}
+
+.dnone {
+	display: none;
+}
+
+table {
+	margin: 0 auto;
+	border-collapse: collapse;
+	padding: 0;
+}
+
+tbody {
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar {
+	width: 200px;
+}
+
+#according {
+	
+}
+
+#sidebar ul li {
+    line-height: 30px;
+    list-style: none;
+    font-size: 12px;
+    padding-left: 20px;
+	padding-bottom: 20px;
+    text-align: left;
+    background: url(../img/button1.gif) no-repeat;
+		
+}
+
+img {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+	COLOR: #0055aa;
+}
+
+tr,td {
+	margin: 0;
+	padding: 0;	
+    FONT-SIZE: 15px;
+}
+
+#word {
+	margin-top: 60px;height: 550px;margin-left: -30px;color: #fa8510;
+}
+
+td {
+	max-width:1000px!important;
+}
+
+
+
+#word a {
+	COLOR: #0055aa;
+    TEXT-DECORATION: none;
+}
+
+
+
+#mySelect1 {
+	width: 40px;
+	
+}
+
+select {
+	COLOR: #333;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: normal;
+}
+
+.main_table {
+	cellspacing:"0";
+	cellpadding:"0";
+	width:"1000"; 
+	align:"right" ;
+	bgcolor:"#ffffff" ;
+	border:"0";
+}
+
+.mtd_left {
+	padding-right: 0px;padding-left: 5px;padding-top: 20px;width: 206px;
+}
+
+.mtd_right {
+	padding-right: 0px;padding-left: 0px;width: 798px;padding-top: 20px;
+}
+
+
+
+
+
+.wrap900 {
+	clear: both;
+    margin: 0 auto;
+    width: 900px;
+}
+
+.input_table {
+	border-collapse:separate; border-spacing:0px 10px;
+	padding-right: 200px;
+}
+
+
+
+
+
+
+
+#word_detail {
+	margin-top: 60px;height: 550px;margin-left:auto;margin-right:auto;color: #fa8510;
+}
+
+
+.page_div {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				font-size: 15px;
+				font-family: "microsoft yahei";
+				color: #666666;
+				margin-right: 10px;
+				padding-left: 20px;
+				box-sizing: border-box;
+			}
+          /*	* 页数按钮样式
+			 */
+			
+.page_div a {
+				min-width: 30px;
+				height: 28px;
+				border: 1px solid #dce0e0!important;
+				text-align: center;
+				margin: 0 4px;
+				cursor: pointer;
+				line-height: 28px;
+				color: #666666;
+				font-size: 13px;
+				display: inline-block;
+			}
+			
+#firstPage,
+#lastPage {
+				width: 50px;
+				color: #0073A9;
+				border: 1px solid #0073A9!important;
+			}
+			
+#prePage,
+#nextPage {
+				width: 70px;
+				color: #0073A9;
+				border: 1px solid #0073A9!important;
+			}
+			
+			.page_div .current {
+				background-color: #0073A9;
+				border-color: #0073A9;
+				color: #FFFFFF;
+			}
+			
+			.totalPages {
+				margin: 0 10px;
+			}
+			
+			.totalPages span,
+			.totalSize span {
+				color: #0073A9;
+				margin: 0 5px;
+			}

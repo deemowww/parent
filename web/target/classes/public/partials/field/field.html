@@ -1,0 +1,83 @@
+<div class="page-header mid" style="padding-left: 15px">
+    <h1>种植管理</h1>
+</div>
+<div class="content mid">
+    <div class="container-fluid">
+        <div class="row" style="margin: 0 -30px">
+            <ul class="nav nav-tabs nav-justified">
+                <li role="presentation" ng-class="view_record_active" id="records-nav" ng-click="viewRecord()"><a href="#">记录管理</a></li>
+                <li role="presentation" ng-class="new_record_active" id="new-record-nav" ng-click="newRecord()"><a href="#">新建记录</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="layer-content" id="records" ng-show="is_record">
+                <form>
+                    <div class="form-group" ng-repeat="content in contents">
+                        <label class="form-control">
+                            <input type="checkbox"/>
+                            <a ui-sref="field_detail" href="#" ng-cloak>{{content.location + ':' + content.seedName}}
+                                <span style="float: right; position: relative;" ng-bind="content.createTime"></span>
+                            </a>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>选择流通公司</label>
+                        <select class="form-control" title="" name="company">
+                            <option>公司1</option>
+                            <option>公司1</option>
+                            <option>公司1</option>
+                            <option>公司1</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default btn-md">提交流通</button>
+                    </div>
+                    <div class="form-group text-center">
+                        <ul class="pagination">
+                            <li ng-class="{disabled:pg3 == 1}"><a href="#" ng-click="turnToPage(pg3 - 1)">上一页</a></li>
+                            <li><a href="#" ng-bind="pg1" ng-show="pg1 != 0" ng-click="turnToPage(pg1)"></a></li>
+                            <li><a href="#" ng-bind="pg2" ng-show="pg2 != 0" ng-click="turnToPage(pg2)"></a></li>
+                            <li class="active"><a href="#" ng-bind="pg3" ng-show="pg3 != 0" ng-click="turnToPage(pg3)"></a></li>
+                            <li><a href="#" ng-bind="pg4" ng-show="pg4 != 0" ng-click="turnToPage(pg4)"></a></li>
+                            <li><a href="#" ng-bind="pg5" ng-show="pg5 != 0" ng-click="turnToPage(pg5)"></a></li>
+                            <li ng-class="{disabled:pg3 == totalPages}"><a href="#" ng-click="turnToPage(pg3 + 1)" ng-disabled="pg3 == totalPages">下一页</a></li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <div class="layer-content" id="new-record" ng-show="!is_record">
+                <form>
+                    <div class="form-group">
+                        <label for="seed-name">种子名称</label>
+                        <input type="text" class="form-control" id="seed-name" placeholder="种子名称" name="seedName">
+                    </div>
+                    <div class="form-group">
+                        <label for="fertile-name">化肥名称</label>
+                        <input type="text" class="form-control" id="fertile-name" placeholder="化肥名称" name="fertileName">
+                    </div>
+                    <div class="form-group">
+                        <label for="fertile-concentration">化肥浓度</label>
+                        <input type="text" class="form-control" id="fertile-concentration" placeholder="化肥浓度" name="fertileConcentration">
+                    </div>
+                    <div class="form-group">
+                        <label for="pesticide-name">农药名称</label>
+                        <input type="text" class="form-control" id="pesticide-name" placeholder="农药名称" name="pesticideName">
+                    </div>
+                    <div class="form-group">
+                        <label for="pesticide-concentration">农药浓度</label>
+                        <input type="text" class="form-control" id="pesticide-concentration" placeholder="农药浓度" name="pesticideConcentration">
+                    </div>
+                    <div class="form-group">
+                        <label for="ph">pH</label>
+                        <input type="text" class="form-control" id="ph" placeholder="pH" name="pH">
+                    </div>
+                    <div class="form-group">
+                        <label for="water-quantity">水质</label>
+                        <input type="text" class="form-control" id="water-quantity" placeholder="水质" name="waterQuantity">
+                    </div>
+                    <button type="button" class="btn btn-default pull-right" onclick="">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

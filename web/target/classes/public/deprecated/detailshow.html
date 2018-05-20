@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>detailshow</title>
+	<link href="../css/style.css" rel="stylesheet" type="text/css">
+	<script src="../js/jquery/jquery-3.3.1.min.js"></script>
+
+</head>
+
+<body>
+	
+	<div id="header">
+		<div class="wrap1000 clearfix" style="background: #7CAEB5 center bottom;height: 108px;">
+		     <div class="tool_box float_right">
+				 <div class="tool float_right relative">
+					 <em>[</em>
+					 <a href="#" rel="nofollow">登录</a>
+					 <em>|</em> 
+					 <a href="#" rel="nofollow">注册</a>
+					 <em>]</em>
+				 </div>
+			 </div>
+			 
+		
+	    </div>
+		
+	</div>
+	<div id="nav">
+		<div class="main_nav">
+			<div class="wrap1000">
+				<ul>
+					<li class="  active">
+						<a href="index3.html">档案管理</a>
+						<i class="ui_icon_bg"></i>
+					</li>
+					<li class=" "><a href="#">新建档案</a></li>					
+					<li class="float_right "><a href="#">流通查询</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="sub_nav">
+			<div class="sub_nav_box dblock">
+				<div class="wrap1000">
+					<!--废弃-->
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div id="container">
+		<div class="wrap1000">
+			<table class="main_table">
+				<tbody>
+				<tr valign="top">
+				<!--left begin-->
+					<td class="mtd_left"  >
+						<div id="sidebar">
+							<ul id="according">
+								<li class="according">
+									<img src="../img/pixer1.gif">
+									<a href="index3.html">种植</a>
+								</li>
+								
+								<li class="according">
+									<img src="../img/pixer1.gif">
+									<a href="index_entrepot.html">								
+										仓储</a>
+								</li>
+								
+								<li class="according">
+									<img src="../img/pixer1.gif">
+									<a href="index_process.html">								
+										加工</a>
+								</li>
+								
+								<li class="according">
+									<img src="../img/pixer1.gif">
+									<a href="index_franchiser.html">								
+										销售</a>
+								</li>
+																					
+							</ul>
+							
+							
+							
+						</div>
+					</td>
+					<td class="mtd_right">
+						<table  style="border-collapse: collapse" bordercolor="#c0daf5" cellspacing="0" cellpadding="3" width="100%" border="1">
+							<tbody>
+								<tr>
+									<td align="left" width="100%" bgcolor="#e9f2fb" height="25" style="font-size: 22px">
+										详情
+									</td>
+								</tr>
+								<tr>
+									<td align="left" style="background-image: url(../img/bg2.gif)">
+										<div id="word_detail" >
+											<div style="height: 450px">
+											
+												<pre id="docJson">???</pre> 
+												 
+											</div>
+											<div style="height: 100px;border-top: 4px ridge #75A7B8">
+												
+												
+												
+												<div style="margin-left: 600px">
+													
+													<form action="#" method="get" style="width: 100px">
+													<input type="submit" value="更新记录" align="middle" style="margin-top: 3px">
+												    </form>
+												
+													<p>流通去向:</p>
+												    <form action="field_input" method="get">
+											          <select id="toSelect">
+																<option selected="">A公司</option>
+                                                                <option>dadA公司</option>
+																<option>AaD公司</option>
+																<option>Aasdsa公司</option>
+																<option>Addsf公司</option>
+																<option>Adsf公司</option>
+																<option>Aaxcxd公司</option>
+										              </select>
+													  <input type="submit" value="提交流通">
+												    </form>
+												</div>
+												
+											</div>
+										</div>
+								       
+									</td>
+								</tr>
+								
+							</tbody>
+														
+						</table>							
+					</td>
+				<!--right end-->	
+										
+				    </tr>
+				</tbody>				
+			</table>
+			
+		</div>
+		
+		
+	</div>
+	<script>
+//         var docJson= {
+//            "name":"sss",
+//            "url23":"www.runoob.com",
+//            "slogan":"学的不仅是技术，更是梦想！"
+//        };
+
+
+         function setContent() {
+             console.log(localStorage.getItem("1"));
+             document.getElementById("docJson").innerHTML=(localStorage.getItem("1"));
+         }
+
+         setContent();
+
+
+//         function GetQueryString(name) {
+//             var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+//             var r = window.location.search.substr(1).match(reg);
+//             if(r!=null)return  unescape(r[2]); return null;
+//         }
+//        var docId=GetQueryString("docId");
+//        if(docId !=null && docId.toString().length>1) {
+//           $.ajax({
+//                        url: "detailController",
+//                        type: "get",
+//                        data: {"docId":docId},
+//                        //dataType: "json",
+//                        success: function(data) {
+//                            document.getElementById("docJson").innerHTML=JSON.stringify(data,null,2);
+//
+//
+//                        },
+//                        error: function( XMLHttpRequest, textStatus, errorThrown){
+//                           alert(XMLHttpRequest.status);
+//                           alert(XMLHttpRequest.readyState);
+//                           alert(textStatus);
+//
+//                        }
+//                    });
+//        }
+    </script>
+	
+	
+	
+	
+	
+</body>
+</html>
+

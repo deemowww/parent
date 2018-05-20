@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../js/paging.js"></script>
+</head>
+
+<body>
+    <!--index开头的html结构都是相同的  -->
+	<div id="header">
+		<div class="wrap1000 clearfix" style="background: #7CAEB5 center bottom;height: 108px;">
+		     <div class="tool_box float_right">
+				 <div class="tool float_right relative">
+					 <em>[</em>
+					 <a href="../login.html" rel="nofollow">登录</a>
+					 <em>|</em> 
+					 <a href="../login.html?register=true" rel="nofollow">注册</a>
+					 <em>]</em>
+				 </div>
+			 </div>
+			 
+		
+	    </div>
+		
+	</div>
+	<div id="nav">
+		<div class="main_nav">
+			<div class="wrap1000">
+				<ul>
+					<li class="  active">
+						<a href="index3.html">记录管理</a>
+						<i class="ui_icon_bg"></i>
+					</li>
+					<li class=" "><a href="fieldin.html">新建记录</a></li>
+					
+					
+					<li class="float_right "><a href="#">流通查询</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="sub_nav">
+			<div class="sub_nav_box dblock">
+			  <!--废弃-->
+			</div>
+			
+		</div>
+	</div>
+	<div id="container">
+		<div class="wrap1000">
+			<table class="main_table">
+				<tbody>
+				<tr valign="top">
+				<!--left begin-->
+					<td class="mtd_left"  >
+						<div id="sidebar">
+							<ul id="according">
+								<li class="according">
+									<img src="../img/pixer1.gif">
+									<a href="index3.html">种植</a>
+								</li>
+								<li class="according">
+									<img src="../img/pixer1.gif">
+									<a href="index_entrepot.html">仓储</a>
+								</li>
+								<li class="according">
+									<img src="../img/pixer1.gif">
+									<a href="index_process.html">加工</a>
+								</li>
+								<li class="according">
+									<img src="../img/pixer1.gif">
+									<a href="index_franchiser.html">销售</a>
+								</li>
+																					
+							</ul>
+							
+							
+							
+						</div>
+					</td>
+					<td class="mtd_right">
+						<table  style="border-collapse: collapse" bordercolor="#c0daf5" cellspacing="0" cellpadding="3" width="100%" border="1">
+							<tbody>
+								<tr>
+									<td align="left" width="100%" bgcolor="#e9f2fb" height="25" style="font-size: 22px">
+										种植记录列表
+									</td>
+								</tr>
+								<tr>
+									<td align="left" style="background-image:  url(../img/bg2.gif)">
+										<div id="word" >
+											<table style="width: 600px">
+												<tbody id=dynamic_field>
+												 <!--下面两个tr是预设的例子,可以删掉  -->
+													<tr style="height: 20px">
+														<td>
+                                                          <a id="record1" title="031564612632记录" onclick="showDetail()" href="#" target="_self">031564612632记录</a>
+                                                        </td>
+														<td align="left" style="color:#f98510">(2017-12-20)  </td>
+													</tr>
+													<tr style="height: 20px">
+														<td>
+                                                          <a title="564612ds512311记录" href="#" target="_self">564612ds512311记录</a>
+                                                        </td>
+														<td align="left" style="color:#f98510">(2017-12-20)  </td>
+													</tr>  																										
+												</tbody>
+											</table>
+										</div>
+								       <!--替换原来的分页栏-->
+										<div id="page" class="page_div"></div>
+									</td>
+								</tr>
+								
+							</tbody>
+														
+						</table>							
+					</td>
+				<!--right end-->	
+										
+				    </tr>
+				</tbody>				
+			</table>
+			
+		</div>
+		
+		
+	</div>
+	
+</body>
+	<script>
+	
+		//设置分页栏信息
+		$("#page").paging({//这是预设的，在没有连接服务器的情况下展示。
+			pageNo:1,
+			totalPage: 9,
+			totalSize: 300,
+			callback: function(num) {
+//				alert(num)
+				
+			}
+		});
+	
+	    //记录列表添加记录
+	    
+		function addelement(docparam){
+			var a1=$("<a></a>").text(docparam.title); 			
+			a1.attr('title',docparam.title);
+			a1.attr('id',docparam.id);
+			a1.attr('href','detailshow.html?docId='+docparam.id);
+			var td1=$("<td></td>"); 
+			td1.append(a1);
+			var td2=$("<td></td>").text("(2017-12-20)");
+			td2.attr('height','20px');
+			td2.attr('align','left');
+			td2.attr('color','#f98510');				
+			var tr1=$("<tr></tr>").text(""); 
+			//tr1.attr('id',docparam.id);
+			tr1.append(td1,td2);
+			$("#dynamic_field").append(tr1);
+		}
+	    
+		// 调用ajax
+		//参数为当前页
+		ajaxTest(1);
+
+		function ajaxTest(num) {
+			$.ajax({
+				url: "/Htmls/transjson",
+				type: "post",
+				data: {"index":num},
+				//dataType: "json",
+				success: function(data) {
+				   	//添加tr元素		    				  
+				    for( i= 0,len=data.docIndexs.length;  i< len;i ++) {
+                        addelement(data.docIndexs[i]);
+                    }				   				    	
+				    	    					
+					//分页
+				
+					$("#page").paging({
+					    
+						pageNo: num,
+						totalPage: data.totalPage,
+						totalSize: data.totalSize,
+						callback: function(num) {						  
+						    $("#dynamic_field").empty();//清空tr元素
+							ajaxTest(num)
+						}
+					})
+					
+					
+				},
+				error: function( XMLHttpRequest, textStatus, errorThrown){
+				   //alert(XMLHttpRequest.status);
+                   //alert(XMLHttpRequest.readyState);
+                   //alert(textStatus);
+
+				}
+			});
+		}
+		
+		function showDetail() {
+		    $.ajax({
+                url: "/doc/detail",
+                type: "post",
+                success: function (re) {
+                    console.log(re);
+                    localStorage.setItem("1", re);
+                    window.location.href = "detailshow.html";
+                }
+            });
+        }
+		
+	</script>
+</html>
+
+	

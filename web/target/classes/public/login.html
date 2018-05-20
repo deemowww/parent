@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Japan do you know</title>
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style/register.css">
+</head>
+<body>
+<div class="wrapper">
+    <form role="form" id="login-form" method="post" action="#">
+        <h2>登录</h2>
+        <div class="form-group">
+            <input class="form-control" placeholder="username" name="username">
+            <div class="message-warning"></div>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="password" name="password">
+            <div class="message-warning"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="#">忘记密码</a>
+            </div>
+        </div><br>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="button" onclick="login()" class="btn btn-info btn-block">登陆</button>
+            </div>
+        </div><br>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <a class="pull-right" onclick="changeForm()" href="#">注册</a>
+            </div>
+        </div>
+    </form>
+    <form role="form" id="register-form" method="post" action="#">
+        <h2>注册</h2>
+        <div class="form-group">
+            <input class="form-control" placeholder="username" name="username">
+            <div class="message-warning"></div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" placeholder="email" name="email">
+            <div class="message-warning"></div>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="password" name="password">
+            <div class="message-warning"></div>
+        </div>
+
+        <div class="form-group">
+            <label>选择附属机构</label>
+            <select class="form-control" title="" name="affiliation">
+                <option>org1.department1</option>
+                <option>org1.department2</option>
+                <option>org2.department1</option>
+                <option>org2.department2</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>选择角色</label>
+            <select class="form-control" title="" name="role">
+                <option>种植</option>
+                <option>仓储</option>
+                <option>加工</option>
+                <option>销售</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="agreed">我已阅读并同意<a href="#">服务条款</a>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="button" class="btn btn-info btn-block" id="register-btn" onclick="register()">注册</button>
+            </div>
+        </div><br>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <a class="pull-right" onclick="changeForm()" href="#">登陆</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="js/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+
+</body>
+</html>

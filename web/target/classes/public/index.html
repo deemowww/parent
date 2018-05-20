@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>农业云平台</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style/nav.css">
+    <link rel="stylesheet" href="css/style/layer.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="mid">
+        <nav class="navbar navbar-tabs">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">种植</a></li>
+                        <li><a href="#">仓储</a></li>
+                        <li><a href="#">加工</a></li>
+                        <li><a href="#">销售</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="login.html" type="button" class="btn">
+                                登录
+                            </a>
+                        </li>
+                        <li>
+                            <a href="login.html?register=true" type="button" class="btn">
+                                注册
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div ui-view></div>
+
+<!--Common-->
+<script src="js/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+<script src="js/angular/angular.js"></script>
+<script src="js/angular/angular-ui-router.js"></script>
+<script src="js/app/app.js"></script>
+
+<!--Module-->
+<script src="js/app/controller/fieldController.js"></script>
+
+<!--<script type="text/javascript" src="js/layer.js"></script>-->
+
+</body>
+</html>
