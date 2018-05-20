@@ -24,20 +24,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value="/field")
 public class FieldController {
 
-    @Autowired
-    private FieldRepository fieldRepository;
 
     @Autowired
     private FieldService fieldService;
 
     @RequestMapping("/findbypage")
     public Page<Field> getFieldsPage(@RequestParam("pageNum") String pageNum){
-        int pageSize = 10;
-        int page = Integer.parseInt(pageNum);
-        Sort sort = new Sort(Sort.Direction.DESC, "createTime");
-        Pageable pageable = new PageRequest(page, pageSize, sort);
-
-        return fieldRepository.findAll(pageable);
+        return fieldService.getFieldsPage(pageNum);
     }
 
     @ApiOperation(value = "通过uid查找种植详情")

@@ -29,26 +29,7 @@ function FieldCtrl($scope, $http) {
         }
     };
 
-    var findbypage = function () {
-        $http({
-            url: "field/findbypage",
-            method: "get",
-            params: {
-                pageNum: 0
-            }
-        }).success(function (res) {
-            $scope.contents = res.content;
-            // console.log($scope.contents);
-            $scope.totalPages = res.totalPages;
-            $scope.pageNum = parseInt(res.number) + 1;
-            if($scope.totalPages > 0){
-                $scope.turnToPage($scope.pageNum);
-            }
-        });
-    };
-
-
-    $scope.turnToPage = function (num) {
+    var findbypage = function (num) {
         num = parseInt(num);
         if(num < 1 || num > $scope.totalPages)
             return;
@@ -72,13 +53,30 @@ function FieldCtrl($scope, $http) {
         $scope["pg3"] = num;
     };
 
+
+    $scope.turnToPage = function (num) {
+        $http({
+            url: "field/findbypage",
+            method: "get",
+            params: {
+                pageNum: parseInt(num) - 1
+            }
+        }).success(function (res) {
+            $scope.contents = res.content;
+            // console.log($scope.contents);
+            $scope.totalPages = res.totalPages;
+            $scope.pageNum = parseInt(res.number) + 1;
+            findbypage(num);
+        });
+    };
+
     $scope.enterDetail = function (content) {
         sessionStorage.setItem('field', JSON.stringify(content));
         // console.log(sessionStorage.getItem('field'));
     };
 
     var init = function () {
-        findbypage();
+        $scope.turnToPage(1);
     };
 
     init();

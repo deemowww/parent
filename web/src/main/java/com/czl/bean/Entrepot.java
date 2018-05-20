@@ -14,7 +14,7 @@ public class Entrepot {
     @GenericGenerator(name = "uuid", strategy = "uuid")
     @Column(name = "entrepotUid", length = 36)
     private String ID;//ID
-    private String Name;//name
+    private String name;//name
     private double capacity;//容量 单位t
     private String principal;//负责人
     private String phone;//负责人电话
@@ -50,11 +50,11 @@ public class Entrepot {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public double getCapacity() {

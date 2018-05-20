@@ -1,9 +1,11 @@
 var app = angular.module('myApp', ['ui.router']);
-app.controller('myCtrl', function ($scope) {
+app.controller('myCtrl', function ($scope, $state) {
     var a =123;
+    $state.go("field");
 });
+
 app.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/field');
+    //$urlRouterProvider.otherwise('/field');
     $stateProvider
         .state('field',{
         url: '/field',
@@ -13,14 +15,30 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 controller: FieldCtrl
             }
         }
-    })
-        .state('field_detail',{
-            url: '/field/detail',
-            views: {
-                '': {
-                    templateUrl: 'partials/field/field_detail.html',
-                    controller: FieldDetailCtrl
-                }
+    }).state('field_detail',{
+        url: '/field/detail',
+        views: {
+            '': {
+                templateUrl: 'partials/field/field_detail.html',
+                controller: FieldDetailCtrl
             }
-        })
+        }
+    }).state('entrepot',{
+        url: '/entrepot',
+        views: {
+            '': {
+                templateUrl: 'partials/entrepot/entrepot.html',
+                controller: EntrepotCtrl
+            }
+        }
+    }).state('entrepot_detail',{
+        url: '/entrepot/detail',
+        views: {
+            '': {
+                templateUrl: 'partials/entrepot/entrepot_detail.html',
+                controller: EntrepotDetailCtrl
+            }
+        }
+    })
+
 });
