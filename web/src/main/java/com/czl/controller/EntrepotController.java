@@ -19,4 +19,6 @@ public class EntrepotController {
     public Page<Entrepot> getFieldsPage(@RequestParam("pageNum") String pageNum){
         return entrepotService.getEntrepotPage(pageNum);
     }
+
+
 }

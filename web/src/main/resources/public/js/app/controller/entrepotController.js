@@ -97,14 +97,13 @@ function EntrepotDetailCtrl($scope, $http, $window) {
 
     var findbypage = function () {
         $http({
-            url: "field/findbypage",
+            url: "entrepot/findbypage",
             method: "get",
             params: {
                 pageNum: 0
             }
         }).success(function (res) {
-            $scope.contents = res.content;
-            // console.log($scope.contents);
+            $scope.contents = res.content[0].fields;
             $scope.totalPages = res.totalPages;
             $scope.pageNum = parseInt(res.number) + 1;
             if($scope.totalPages > 0){
