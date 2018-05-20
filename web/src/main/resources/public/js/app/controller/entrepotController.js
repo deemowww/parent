@@ -1,7 +1,20 @@
-function FieldCtrl($scope, $http) {
-    $scope.is_record = true;
-    $scope.view_record_active = 'active';
-    $scope.new_record_active = '';
+function EntrepotCtrl($scope) {
+
+
+    $scope.enterDetail = function (content) {
+        sessionStorage.setItem('entrepot', JSON.stringify(content));
+        // console.log(sessionStorage.getItem('entrepot'));
+    };
+
+    var init = function () {
+
+    };
+
+    init();
+}
+
+function EntrepotDetailCtrl($scope, $http, $window) {
+    $scope.entrepot = FieldService.get('entrepot');
 
     $scope.totalPages = 0;
     $scope.pageNum = 1;
@@ -12,22 +25,6 @@ function FieldCtrl($scope, $http) {
     $scope.pg3 = 0;
     $scope.pg4 = 0;
     $scope.pg5 = 0;
-
-    $scope.viewRecord = function () {
-        if(!$scope.is_record){
-            $scope.view_record_active = 'active';
-            $scope.new_record_active = '';
-            $scope.is_record = true;
-        }
-    };
-
-    $scope.newRecord = function () {
-        if($scope.is_record){
-            $scope.view_record_active = '';
-            $scope.new_record_active = 'active';
-            $scope.is_record = false;
-        }
-    };
 
     var findbypage = function () {
         $http({
@@ -46,7 +43,6 @@ function FieldCtrl($scope, $http) {
             }
         });
     };
-
 
     $scope.turnToPage = function (num) {
         num = parseInt(num);
@@ -77,33 +73,12 @@ function FieldCtrl($scope, $http) {
         // console.log(sessionStorage.getItem('field'));
     };
 
-    var init = function () {
-        findbypage();
-    };
-
-    init();
-}
-
-function FieldDetailCtrl($scope, $window) {
-    $scope.field = JSON.parse(sessionStorage.getItem('field'));
-
-    // var findById = function () {
-    //     $http({
-    //         url: 'field/findFieldById',
-    //         method: 'post',
-    //         params: {
-    //             id: field.id
-    //         }
-    //     }).success(function (res) {
-    //         console.log(res);
-    //     })
-    // };
     $scope.goback = function () {
         $window.history.back();
     };
 
     var init = function () {
-
+        findbypage();
     };
 
     init();

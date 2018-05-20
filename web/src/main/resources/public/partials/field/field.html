@@ -1,6 +1,12 @@
-<div class="page-header mid" style="padding-left: 15px">
-    <h1>种植管理</h1>
-</div>
+<section class="page-header mid" style="padding-left: 15px">
+    <h1>
+        种植管理
+        <small>Field management</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li ui-sref="field"><a href="#"><i class="fa fa-dashboard"></i>种植管理</a></li>
+    </ol>
+</section>
 <div class="content mid">
     <div class="container-fluid">
         <div class="row" style="margin: 0 -30px">
@@ -15,7 +21,7 @@
                     <div class="form-group" ng-repeat="content in contents">
                         <label class="form-control">
                             <input type="checkbox"/>
-                            <a ui-sref="field_detail" href="#" ng-cloak>{{content.location + ':' + content.seedName}}
+                            <a ui-sref="field_detail" ng-click="enterDetail(content)" href="#" ng-cloak>{{content.location + ':' + content.seedName}}
                                 <span style="float: right; position: relative;" ng-bind="content.createTime"></span>
                             </a>
                         </label>

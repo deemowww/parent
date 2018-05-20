@@ -1,0 +1,63 @@
+<section class="page-header mid" style="padding-left: 15px">
+    <h1>
+        仓储详情
+        <small>Entrepot detail</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li ui-sref="entrepot"><a href="#"><i class="fa fa-dashboard"></i>仓储管理</a></li>
+        <li><a>仓储详情</a></li>
+    </ol>
+</section>
+<div class="content mid">
+    <div class="container-fluid">
+        <div class="row layer-content">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <button class="btn btn-default btn-md col-sm-1" ng-click="goback()">返回</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">仓库名称</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static">{{entrepot.Name}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">仓库容量</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static">{{entrepot.capacity}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">负责人</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static">{{entrepot.principal}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">负责人电话</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static">{{entrepot.phone}}</p>
+                </div>
+            </div>
+            <div class="form-group" ng-repeat="content in contents">
+                <label class="form-control">
+                    <a ui-sref="field_detail" ng-click="enterDetail(content)" href="#" ng-cloak>{{content.location + ':' + content.seedName}}
+                        <span style="float: right; position: relative;" ng-bind="content.createTime"></span>
+                    </a>
+                </label>
+            </div>
+            <div class="form-group text-center">
+                <ul class="pagination">
+                    <li ng-class="{disabled:pg3 == 1}"><a href="#" ng-click="turnToPage(pg3 - 1)">上一页</a></li>
+                    <li><a href="#" ng-bind="pg1" ng-show="pg1 != 0" ng-click="turnToPage(pg1)"></a></li>
+                    <li><a href="#" ng-bind="pg2" ng-show="pg2 != 0" ng-click="turnToPage(pg2)"></a></li>
+                    <li class="active"><a href="#" ng-bind="pg3" ng-show="pg3 != 0" ng-click="turnToPage(pg3)"></a></li>
+                    <li><a href="#" ng-bind="pg4" ng-show="pg4 != 0" ng-click="turnToPage(pg4)"></a></li>
+                    <li><a href="#" ng-bind="pg5" ng-show="pg5 != 0" ng-click="turnToPage(pg5)"></a></li>
+                    <li ng-class="{disabled:pg3 == totalPages}"><a href="#" ng-click="turnToPage(pg3 + 1)" ng-disabled="pg3 == totalPages">下一页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

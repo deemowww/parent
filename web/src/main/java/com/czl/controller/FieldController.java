@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.czl.bean.Field;
 import com.czl.repository.FieldRepository;
+import com.czl.service.FieldService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -23,7 +25,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class FieldController {
 
     @Autowired
-    FieldRepository fieldRepository;
+    private FieldRepository fieldRepository;
+
+    @Autowired
+    private FieldService fieldService;
 
     @RequestMapping("/findbypage")
     public Page<Field> getFieldsPage(@RequestParam("pageNum") String pageNum){
@@ -34,6 +39,13 @@ public class FieldController {
 
         return fieldRepository.findAll(pageable);
     }
+
+    @ApiOperation(value = "通过uid查找种植详情")
+    @RequestMapping("/findFieldById")
+    public Field findFieldById(@RequestParam("id") String id){
+        return fieldService.findFieldById(id);
+    }
+
 /*
 
     @RequestMapping("/transjson")
