@@ -72,7 +72,7 @@ function FranchiserCtrl($scope, $http) {
 
     $scope.enterDetail = function (content) {
         sessionStorage.setItem('franchiser', JSON.stringify(content));
-        // console.log(sessionStorage.getItem('entrepot'));
+        // console.log(sessionStorage.getItem('franchiser'));
     };
 
     var init = function () {
@@ -121,19 +121,13 @@ function FranchiserDetailCtrl($scope, $http, $window) {
 
 
     $scope.turnToPage = function (num) {
-        $http({
-            url: "franchiser/findbypage",
-            method: "get",
-            params: {
-                pageNum: parseInt(num) - 1
-            }
-        }).success(function (res) {
-            $scope.contents = $scope.franchiser.processes;
-            // console.log($scope.franchiser);
-            $scope.totalPages = res.totalPages;
-            $scope.pageNum = parseInt(res.number) + 1;
-            findbypage(num);
-        });
+        $scope.contents = [];
+        for(var i=(num-1)*10;i<num*10 && i<$scope.franchiser.processes.length;i++){
+            $scope.contents.push($scope.franchiser.processes[i])
+        }
+        $scope.totalPages = Math.ceil($scope.franchiser.processes.length / 10);
+        $scope.pageNum = num;
+        findbypage(num);
     };
 
     $scope.enterDetail = function (content) {

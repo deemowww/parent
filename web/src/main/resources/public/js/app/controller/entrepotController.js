@@ -121,19 +121,13 @@ function EntrepotDetailCtrl($scope, $http, $window) {
 
 
     $scope.turnToPage = function (num) {
-        $http({
-            url: "entrepot/findbypage",
-            method: "get",
-            params: {
-                pageNum: parseInt(num) - 1
-            }
-        }).success(function (res) {
-            $scope.contents = $scope.entrepot.fields;
-            // console.log($scope.contents);
-            $scope.totalPages = res.totalPages;
-            $scope.pageNum = parseInt(res.number) + 1;
-            findbypage(num);
-        });
+        $scope.contents = [];
+        for(var i=(num-1)*10;i<num*10 && i<$scope.entrepot.fields.length;i++){
+            $scope.contents.push($scope.entrepot.fields[i])
+        }
+        $scope.totalPages = Math.ceil($scope.entrepot.fields.length / 10);
+        $scope.pageNum = num;
+        findbypage(num);
     };
 
     $scope.enterDetail = function (content) {

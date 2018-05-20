@@ -84,7 +84,6 @@ function ProcessCtrl($scope, $http) {
 
 function ProcessDetailCtrl($scope, $http, $window) {
     $scope.process = JSON.parse(sessionStorage.getItem('process'));
-    // console.log($scope.process)
 
     $scope.totalPages = 0;
     $scope.pageNum = 1;
@@ -122,19 +121,13 @@ function ProcessDetailCtrl($scope, $http, $window) {
 
 
     $scope.turnToPage = function (num) {
-        $http({
-            url: "process/findbypage",
-            method: "get",
-            params: {
-                pageNum: parseInt(num) - 1
-            }
-        }).success(function (res) {
-            $scope.contents = $scope.process.entrepots;
-            // console.log($scope.process);
-            $scope.totalPages = res.totalPages;
-            $scope.pageNum = parseInt(res.number) + 1;
-            findbypage(num);
-        });
+        $scope.contents = [];
+        for(var i=(num-1)*10;i<num*10 && i<$scope.process.entrepots.length;i++){
+            $scope.contents.push($scope.process.entrepots[i])
+        }
+        $scope.totalPages = Math.ceil($scope.process.entrepots.length / 10);
+        $scope.pageNum = num;
+        findbypage(num);
     };
 
     $scope.enterDetail = function (content) {
