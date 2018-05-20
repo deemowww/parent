@@ -39,6 +39,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 controller: EntrepotDetailCtrl
             }
         }
+    }).state('process',{
+        url: '/process',
+        views: {
+            '': {
+                templateUrl: 'partials/process/process.html',
+                controller: ProcessCtrl
+            }
+        }
     })
 
 });
