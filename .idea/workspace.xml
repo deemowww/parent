@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="871cbf8b-fce3-43f3-9060-aa21409d74ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/com/czl/service/EntrepotService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/com/czl/service/FieldService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/com/czl/service/FranchiserService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/com/czl/service/ProcessService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fabric_sdk/target/classes/org/hyperledger/fabric/sdk/BlockInfo$TransactionEnvelopeInfo$TransactionActionInfo.class" afterPath="$PROJECT_DIR$/fabric_sdk/target/classes/org/hyperledger/fabric/sdk/BlockInfo$TransactionEnvelopeInfo$TransactionActionInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fabric_sdk/target/classes/org/hyperledger/fabric/sdk/ChaincodeEndorsementPolicy.class" afterPath="$PROJECT_DIR$/fabric_sdk/target/classes/org/hyperledger/fabric/sdk/ChaincodeEndorsementPolicy.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fabric_sdk/target/classes/org/hyperledger/fabric/sdk/Channel$TL.class" afterPath="$PROJECT_DIR$/fabric_sdk/target/classes/org/hyperledger/fabric/sdk/Channel$TL.class" />
@@ -26,10 +22,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/com/czl/bean/Franchiser.class" afterPath="$PROJECT_DIR$/web/target/classes/com/czl/bean/Franchiser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/com/czl/bean/Process.class" afterPath="$PROJECT_DIR$/web/target/classes/com/czl/bean/Process.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/com/czl/bean/Entrepot.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/czl/bean/Entrepot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/com/czl/bean/Field.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/czl/bean/Field.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/com/czl/bean/Franchiser.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/czl/bean/Franchiser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/com/czl/bean/Process.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/czl/bean/Process.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/application.properties" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/main/resources/application.properties" afterPath="$PROJECT_DIR$/web/target/classes/main/resources/application.properties" />
@@ -62,7 +54,7 @@
         <entry file="file://$PROJECT_DIR$/web/src/main/resources/public/partials/field/field_detail.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+              <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -82,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/web/src/main/java/com/czl/controller/FieldController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="226">
-              <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+              <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,8 +127,8 @@
       <file leaf-file-name="ProcessService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/main/java/com/czl/service/ProcessService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="351">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -466,7 +458,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -625,7 +617,7 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\chenq\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -642,7 +634,7 @@
       <workItem from="1526741865353" duration="8743000" />
       <workItem from="1526757014458" duration="41000" />
       <workItem from="1526798529697" duration="467000" />
-      <workItem from="1526799114442" duration="1024000" />
+      <workItem from="1526799114442" duration="2339000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1526741156068</created>
@@ -665,11 +657,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526757044692</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add services and fix some errors">
+      <created>1526800260644</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1526800260644</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67028000" />
+    <option name="totallyTimeSpent" value="68343000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -682,7 +681,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -702,7 +700,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33821872" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33821872" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -731,7 +729,8 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="new" />
-    <option name="LAST_COMMIT_MESSAGE" value="new" />
+    <MESSAGE value="add services and fix some errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="add services and fix some errors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1044,7 +1043,7 @@
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/czl/controller/FieldController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
-          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1096,7 +1095,7 @@
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/public/partials/field/field_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+          <caret line="38" column="27" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1111,8 +1110,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/czl/service/ProcessService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state relative-caret-position="351">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
