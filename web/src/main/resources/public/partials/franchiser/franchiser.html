@@ -21,22 +21,10 @@
                     <div class="form-group" ng-repeat="content in contents">
                         <label class="form-control">
                             <input type="checkbox"/>
-                            <a ui-sref="field_detail" ng-click="enterDetail(content)" href="#" ng-cloak>{{content.location + ':' + content.seedName}}
+                            <a ui-sref="field_detail" ng-click="enterDetail(content)" href="#" ng-cloak>{{content.name}}
                                 <span style="float: right; position: relative;" ng-bind="content.createTime"></span>
                             </a>
                         </label>
-                    </div>
-                    <div class="form-group">
-                        <label>选择流通公司</label>
-                        <select class="form-control" title="" name="company">
-                            <option>公司1</option>
-                            <option>公司1</option>
-                            <option>公司1</option>
-                            <option>公司1</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-default btn-md">提交流通</button>
                     </div>
                     <div class="form-group text-center">
                         <ul class="pagination">

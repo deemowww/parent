@@ -47,6 +47,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 controller: ProcessCtrl
             }
         }
+    }).state('franchiser',{
+        url: '/franchiser',
+        views: {
+            '': {
+                templateUrl: 'partials/franchiser/franchiser.html',
+                controller: FranchiserCtrl
+            }
+        }
     })
 
 });
