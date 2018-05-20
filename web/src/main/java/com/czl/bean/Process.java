@@ -7,12 +7,12 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "Process")
+@Table(name = "process")
 public class Process {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid")
-    @Column(name = "ProcessUid", length = 36)
+    @Column(name = "processUid", length = 36)
     private String ID;//ID
     private String location;//地点
     private String enterpriseName;//企业名称

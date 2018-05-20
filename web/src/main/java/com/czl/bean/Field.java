@@ -7,13 +7,13 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Field")
+@Table(name = "field")
 public class Field {
 
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid")
-    @Column(name = "FieldUid", length = 36)
+    @Column(name = "fieldUid", length = 36)
     private String ID;//ID
     private String seedName;// 种子
     private String location;// 地点

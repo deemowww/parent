@@ -7,12 +7,12 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "Entrepot")
+@Table(name = "entrepot")
 public class Entrepot {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid")
-    @Column(name = "EntrepotUid", length = 36)
+    @Column(name = "entrepotUid", length = 36)
     private String ID;//ID
     private String Name;//name
     private double capacity;//容量 单位t
