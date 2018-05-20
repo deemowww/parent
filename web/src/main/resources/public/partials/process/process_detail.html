@@ -18,32 +18,74 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">仓库名称</label>
+                    <label class="col-sm-2 control-label">加工地点</label>
                     <div class="col-sm-10">
-                        <p class="form-control-static">{{entrepot.name}}</p>
+                        <p class="form-control-static">{{process.location}}</p>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">仓库容量</label>
+                    <label class="col-sm-2 control-label">企业名称</label>
                     <div class="col-sm-10">
-                        <p class="form-control-static">{{entrepot.capacity}}</p>
+                        <p class="form-control-static">{{process.enterpriseName}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">配料</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{process.materials}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">产品执行标准</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{process.productStandard}}</p>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">负责人</label>
                     <div class="col-sm-10">
-                        <p class="form-control-static">{{entrepot.principal}}</p>
+                        <p class="form-control-static">{{process.principal}}</p>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">负责人电话</label>
+                    <label class="col-sm-2 control-label">产品名称</label>
                     <div class="col-sm-10">
-                        <p class="form-control-static">{{entrepot.phone}}</p>
+                        <p class="form-control-static">{{process.productName}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">生产日期</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{process.productionDate}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">保质期</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{process.expirationDate}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">营养成分</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{process.nutrition}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">质量</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{process.quality}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">批次</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{process.batch}}</p>
                     </div>
                 </div>
                 <div class="form-group col-sm-12" ng-repeat="content in contents">
                     <label class="form-control">
-                        <a ui-sref="field_detail" ng-click="enterDetail(content)" href="#" ng-cloak>{{content.location + ':' + content.seedName}}
+                        <a ui-sref="entrepot_detail" ng-click="enterDetail(content)" href="#" ng-cloak>{{content.name}}
                             <span style="float: right; position: relative;" ng-bind="content.createTime"></span>
                         </a>
                     </label>

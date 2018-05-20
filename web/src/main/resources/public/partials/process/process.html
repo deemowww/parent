@@ -21,7 +21,7 @@
                     <div class="form-group" ng-repeat="content in contents">
                         <label class="form-control">
                             <input type="checkbox"/>
-                            <a ui-sref="" ng-click="enterDetail(content)" href="#" ng-cloak>{{content.enterpriseName}}
+                            <a ui-sref="process_detail" ng-click="enterDetail(content)" href="#" ng-cloak>{{content.enterpriseName}}
                                 <span style="float: right; position: relative;" ng-bind="content.createTime"></span>
                             </a>
                         </label>

@@ -95,24 +95,7 @@ function EntrepotDetailCtrl($scope, $http, $window) {
     $scope.pg4 = 0;
     $scope.pg5 = 0;
 
-    var findbypage = function () {
-        $http({
-            url: "entrepot/findbypage",
-            method: "get",
-            params: {
-                pageNum: 0
-            }
-        }).success(function (res) {
-            $scope.contents = res.content[0].fields;
-            $scope.totalPages = res.totalPages;
-            $scope.pageNum = parseInt(res.number) + 1;
-            if($scope.totalPages > 0){
-                $scope.turnToPage($scope.pageNum);
-            }
-        });
-    };
-
-    $scope.turnToPage = function (num) {
+    var findbypage = function (num) {
         num = parseInt(num);
         if(num < 1 || num > $scope.totalPages)
             return;
@@ -136,6 +119,23 @@ function EntrepotDetailCtrl($scope, $http, $window) {
         $scope["pg3"] = num;
     };
 
+
+    $scope.turnToPage = function (num) {
+        $http({
+            url: "entrepot/findbypage",
+            method: "get",
+            params: {
+                pageNum: parseInt(num) - 1
+            }
+        }).success(function (res) {
+            $scope.contents = res.content[0].fields;
+            // console.log($scope.contents);
+            $scope.totalPages = res.totalPages;
+            $scope.pageNum = parseInt(res.number) + 1;
+            findbypage(num);
+        });
+    };
+
     $scope.enterDetail = function (content) {
         sessionStorage.setItem('field', JSON.stringify(content));
         // console.log(sessionStorage.getItem('field'));
@@ -146,7 +146,7 @@ function EntrepotDetailCtrl($scope, $http, $window) {
     };
 
     var init = function () {
-        findbypage();
+        $scope.turnToPage(1);
     };
 
     init();
