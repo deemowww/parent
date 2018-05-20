@@ -128,7 +128,7 @@ function EntrepotDetailCtrl($scope, $http, $window) {
                 pageNum: parseInt(num) - 1
             }
         }).success(function (res) {
-            $scope.contents = res.content[0].fields;
+            $scope.contents = $scope.entrepot.fields;
             // console.log($scope.contents);
             $scope.totalPages = res.totalPages;
             $scope.pageNum = parseInt(res.number) + 1;

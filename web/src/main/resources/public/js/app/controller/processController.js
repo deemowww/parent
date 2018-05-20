@@ -84,7 +84,7 @@ function ProcessCtrl($scope, $http) {
 
 function ProcessDetailCtrl($scope, $http, $window) {
     $scope.process = JSON.parse(sessionStorage.getItem('process'));
-    console.log($scope.process)
+    // console.log($scope.process)
 
     $scope.totalPages = 0;
     $scope.pageNum = 1;
@@ -129,8 +129,8 @@ function ProcessDetailCtrl($scope, $http, $window) {
                 pageNum: parseInt(num) - 1
             }
         }).success(function (res) {
-            $scope.contents = res.content[0].entrepots;
-            // console.log($scope.contents);
+            $scope.contents = $scope.process.entrepots;
+            // console.log($scope.process);
             $scope.totalPages = res.totalPages;
             $scope.pageNum = parseInt(res.number) + 1;
             findbypage(num);

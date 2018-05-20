@@ -128,8 +128,8 @@ function FranchiserDetailCtrl($scope, $http, $window) {
                 pageNum: parseInt(num) - 1
             }
         }).success(function (res) {
-            $scope.contents = res.content[0].processes;
-            // console.log($scope.contents);
+            $scope.contents = $scope.franchiser.processes;
+            // console.log($scope.franchiser);
             $scope.totalPages = res.totalPages;
             $scope.pageNum = parseInt(res.number) + 1;
             findbypage(num);
